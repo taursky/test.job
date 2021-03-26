@@ -94,12 +94,13 @@ class FlightService
 //            ->html('<p>See Twig integration for better HTML integration!</p>')
         ;
 
-//        try {
-//            $this->mailer->send($email);
-//        } catch (TransportExceptionInterface $e) {//TransportExceptionInterface
-//            throw new \Exception('mail failed');
-//            // some error prevented the email sending; display an
-//            // error message or try to resend the message
-//        }
+        try {
+            $this->mailer->send($email);
+            //do something
+        } catch (TransportExceptionInterface $e) {//TransportExceptionInterface
+            throw new \Exception('mail failed');
+            // some error prevented the email sending; display an
+            // error message or try to resend the message
+        }
     }
 }
